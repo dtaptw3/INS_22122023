@@ -1,0 +1,253 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+
+<h:head>
+	<style>
+.ui-sticky {
+	top: 70px !important;
+}
+
+@media ( max-width : 960px) {
+	.ui-sticky {
+		top: 110px !important;
+	}
+}
+</style>
+</h:head>
+
+
+<p:panel id="iplanDetails" header="Plan Details" toggleable="true"
+	widgetVar="ipDetPanel">
+
+	<h:form id="iplanForm">
+
+
+		<p:panel id="iplanDetails" toggleable="true"
+			widgetVar="ipDetHeadPanel" header="#{insPlanMB.insurancePlan.name}">
+
+			<div class="ui-fluid">
+
+				<p:panelGrid columns="4"
+					columnClasses="ui-g-12 ui-md-2,ui-g-12 ui-md-4,ui-g-12 ui-md-2,ui-g-12 ui-md-4"
+					layout="grid" styleClass="ui-panelgrid-blank">
+
+					<h:outputText value="ID: *" />
+					<p:inputText value="#{insPlanMB.insurancePlan.id}" required="true"
+						label="Firstname">
+						<p:ajax event="change" process="@this" partialSubmit="true"></p:ajax>
+					</p:inputText>
+
+					<h:outputText value="Name: *" />
+					<p:inputText value="#{insPlanMB.insurancePlan.name}"
+						required="true" label="Firstname">
+						<p:ajax event="change" process="@this" partialSubmit="true"></p:ajax>
+					</p:inputText>
+
+					<h:outputText value="Rate" />
+					<p:selectOneButton
+						value="#{insPlanMB.insurancePlan.patienttreatment}">
+
+						<f:selectItem itemLabel="Yes" itemValue="Y" />
+						<f:selectItem itemLabel="No" itemValue="N" />
+						<p:ajax event="change" process="@this" partialSubmit="true"></p:ajax>
+					</p:selectOneButton>
+
+					<h:outputText value="Enhanced Maternity" />
+					<p:selectOneButton
+						value="#{insPlanMB.insurancePlan.enhancedmaternity}">
+						<f:selectItem itemLabel="Yes" itemValue="Y" />
+						<f:selectItem itemLabel="No" itemValue="N" />
+						<p:ajax event="change" process="@this" partialSubmit="true"></p:ajax>
+					</p:selectOneButton>
+
+					<h:outputText value="Dental" />
+					<p:selectOneButton value="#{insPlanMB.insurancePlan.dental}">
+						<f:selectItem itemLabel="Yes" itemValue="Y" />
+						<f:selectItem itemLabel="No" itemValue="N" />
+						<p:ajax event="change" process="@this" partialSubmit="true"></p:ajax>
+					</p:selectOneButton>
+
+
+
+					<h:outputText value="Status" />
+					<p:selectOneButton value="#{insPlanMB.insurancePlan.status}">
+						<f:selectItem itemLabel="Active" itemValue="A" />
+						<f:selectItem itemLabel="Inactive" itemValue="X" />
+						<p:ajax event="change" process="@this" partialSubmit="true"></p:ajax>
+					</p:selectOneButton>
+
+				</p:panelGrid>
+
+
+
+				<p:panel header="Benefits">
+
+					<p:panelGrid columns="2"
+						columnClasses="ui-g-12 ui-md-3,ui-g-12 ui-md-9" layout="grid"
+						styleClass="ui-panelgrid-blank">
+
+
+						<h:outputText value="Plan_Name" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Direct_Billing_Network" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Deductible_or_Copay" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Annual_Limit" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Geographical_Coverage" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Inpatient_Hospitalisation" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Out_Patient" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Physiotherapy" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Emergency_Evacuation" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Chronic_Conditions" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Preexisting_Cover" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Routine_Maternity" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Maternity_Waiting_Period" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Dental" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Dental_Waiting_Period" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Optical_Benefits" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Wellness" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Semi_Annual_Surcharge" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Quarterly_Surcharge" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Monthly_Surcharge" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+
+						<h:outputText value="Age" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Height" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Weight" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Factor" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+
+						<h:outputText value="UAE_Dirham_excluding_TAX" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="UAE_Dirham_including_TAX" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+						<h:outputText value="Comment" />
+						<p:inputText value="#{insPlanMB.insurancePlan.benefits.Plan_Name}">
+							<p:ajax event="change" process="@this" partialSubmit="true" />
+						</p:inputText>
+
+					</p:panelGrid>
+
+				</p:panel>
+
+
+
+			</div>
+
+		</p:panel>
+
+
+
+
+
+		<p:commandButton value="Save" process="@this" icon="fa fa-save"
+			actionListener="#{insPlanMB.saveCompany}" />
+
+	</h:form>
+</p:panel>
+
+
+</html>

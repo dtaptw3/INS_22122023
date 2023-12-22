@@ -1,0 +1,129 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<h:head>
+	<title>Insura</title>
+	<h:outputStylesheet name="css/login.css" />
+	<link rel="shortcut icon" type="image/x-icon"
+		href="#{request.contextPath}/resources/images/icons/origami.png" />
+		<h:outputStylesheet library="webjars"
+	name="font-awesome/6.1.2/css/all.min-jsf.css" />
+
+	<style>
+.bg-image {
+	background: #0F2027; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.cardStyle {
+	opacity: 4;
+	margin: 12% auto auto auto;
+	width: 25em;
+	padding: 2em auto auto 2em;
+}
+</style>
+</h:head>
+
+<h:body styleClass="bg-image">
+
+
+	<h:form id="LoginForm">
+
+		<p:growl id="stat" life="3000" showDetail="true" showSummary="true">
+			<p:autoUpdate />
+		</p:growl>
+
+		<p:card styleClass="cardStyle">
+
+			<f:facet name="title">
+				<p:commandLink process="@this" actionListener="#{spa.logout}">
+					<p:graphicImage url="/resources/images/icons/origami.png"
+						height="38px;">
+					</p:graphicImage>
+				</p:commandLink>
+
+
+				<h:outputText value="#{usersMB.entity}_"
+					style="font-size:14px;text-align:center;" />
+
+			</f:facet>
+			<div class="card">
+				<div class="grid ui-fluid">
+					<div class="col-12 md:col-4">
+						<div class="ui-inputgroup">
+							<div class="ui-inputgroup-addon">
+								<i class="pi pi-user"></i>
+							</div>
+							<p:inputText styleClass="ip" id="spaname" placeholder="spaname"
+								value="#{spa.spaname}">
+
+								<p:ajax event="change" process="@this" partialSubmit="true" />
+
+							</p:inputText>
+
+						</div>
+					</div>
+					<p:spacer height="10" />
+					<div class="col-12 md:col-4">
+						<div class="ui-inputgroup">
+							<div class="ui-inputgroup-addon">
+								<i class="pi pi-key"></i>
+							</div>
+
+
+							<p:password style="color:#434159;" styleClass="ip" id="_"
+								placeholder="Password" value="#{spa.spakey}">
+								<p:ajax event="change" process="@this" partialSubmit="true" />
+							</p:password>
+
+						</div>
+					</div>
+
+
+
+					<p:separator style="width:7%;color:black;"></p:separator>
+
+					<p:commandButton ajax="false" id="loginBtn" 
+						value=" > " action="#{spa.checkSPA}" />
+
+					<p:spacer height="10" />
+					
+					<p>> Warning: this page is not for users!</p>
+					
+					<p:commandButton icon="fa fa-arrow-left" value="Take me to user login page" action="#{usersMB.logout}" />
+
+				</div>
+			</div>
+
+		</p:card>
+	</h:form>
+
+
+	<p:ajaxStatus onstart="PF('statusDialog').show()"
+		oncomplete="PF('statusDialog').hide();" />
+
+	<p:dialog widgetVar="statusDialog" draggable="false" closable="true"
+		modal="false" styleClass="ajaxStatusDlg" appendTo="@(body)"
+		style="background:transparent;padding:0;border:none;"
+		resizable="false" showHeader="false">
+		<center>
+			<h:panelGrid columns="1" cellpadding="0" cellspacing="0">
+
+				<p:graphicImage url="/resources/images/icons/cc.gif" height="100" />
+
+			</h:panelGrid>
+		</center>
+	</p:dialog>
+
+
+</h:body>
+</html>

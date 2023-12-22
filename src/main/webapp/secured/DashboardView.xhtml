@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+<h:body>
+	<h:form id="dashForm">
+		<div class="ui-fluid">
+
+			<p:panel header="Dashboard">
+			</p:panel>
+
+			<p:panelGrid columns="2"
+				columnClasses="ui-g-12 ui-md-6,ui-g-12 ui-md-6" layout="grid"
+				styleClass="ui-panelgrid-blank">
+
+
+				<p:card>
+					<f:facet name="header">
+
+					</f:facet>
+					<f:facet name="title">
+        				Total quotes Sent
+   					 </f:facet>
+					<f:facet name="subtitle">
+      				  Card subtitle
+    				</f:facet>
+
+					<h2>134</h2>
+
+					<f:facet name="footer">
+						<p:commandButton id="viewQuotesBtn" value="View Quotes" ajax="false"
+							process="@this" actionListener="#{modulesMB.navigateToPage}" />
+					</f:facet>
+				</p:card>
+
+
+
+				<p:card>
+					<f:facet name="header">
+
+					</f:facet>
+					<f:facet name="title">
+        			Total Insurance Providers
+   					 </f:facet>
+					<f:facet name="subtitle">
+      				  Card subtitle
+    				</f:facet>
+
+					<h2>38</h2>
+
+					<f:facet name="footer">
+						<p:commandButton id="viewCompaniesBtn" value="View Companies"  ajax="false"
+							process="@this" actionListener="#{modulesMB.navigateToPage}" />
+
+					</f:facet>
+				</p:card>
+
+
+			</p:panelGrid>
+		</div>
+	</h:form>
+</h:body>
+</html>

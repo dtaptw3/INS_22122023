@@ -1,0 +1,51 @@
+.ui-widget, .ui-widget .ui-widget {
+	font-size: 12px !important;
+	border-radius: 0px;
+}
+
+.ui-widget .ui-widget-content {
+	font-size: 12px !important;
+	border-radius: 0px;
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+/* .ui-corner-all, .body .ui-corner-all, .ui-panel, .ui-panel .ui-panel-titlebar,
+	body .ui-corner-top {
+	border-radius: 0px;
+	outline: aqua;
+} */
+
+body .ui-button, ui-widget .ui-button, ui-button {
+	
+	background: black !important;
+	border-radius: 3px !important;
+	border:none;
+	font-weight: 600;
+	outline: none !important;
+	
+}
+
+body .ui-button:hover, ui-widget .ui-button:hover, ui-button:hover {
+	
+	background: #1fcf80!important;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 16px 0
+		rgba(0, 0, 0, 0.19);
+	
+	
+}
+
+
+.bg-image {
+	background: #11998e; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #38ef7d, #11998e);
+}
+
+.cardStyle {
+	opacity: 4;
+	margin: 12% auto auto auto;
+	width: 25em;
+	padding: 2em auto auto 2em;
+}

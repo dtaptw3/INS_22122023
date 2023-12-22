@@ -1,0 +1,322 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+
+
+<h:body>
+	<h:form id="quoteDetailsForm">
+		<p:panel collapsed="true" toggleable="true" widgetVar="quoteDetPanel">
+			<div class="ui-fluid">
+
+
+				<p:growl id="growl" sticky="true" showDetail="true" />
+
+				<p:panel header="New Quote">
+
+					<p:wizard flowListener="#{quoteMB.onFlowProcess}"
+						updateModelOnPrev="true">
+						<p:tab id="personal" title="Member Details">
+
+							<p:panel header="Member Details">
+								<!-- <p:messages /> -->
+								<p:panelGrid columns="4"
+									columnClasses="ui-g-12 ui-md-2,ui-g-12 ui-md-4,ui-g-12 ui-md-2,ui-g-12 ui-md-4"
+									layout="grid" styleClass="ui-panelgrid-blank">
+
+									<h:outputText value="Firstname: *" />
+									<p:inputText value="#{quoteMB.quote.firstname}" required="true"
+										label="Firstname" />
+
+									<h:outputText value="Lastname: *" />
+									<p:inputText value="#{quoteMB.quote.lastname}" required="true"
+										label="Lastname" />
+
+									<h:outputText value="Email: *" />
+									<p:inputText value="#{quoteMB.quote.email}" required="true"
+										label="Email" />
+
+
+									<h:outputText value="Gender: *" />
+									<p:selectOneMenu value="#{quoteMB.quote.gender}"
+										autoWidth="false" placeholder="Gender">
+										<f:selectItem itemLabel="Select One" />
+										<f:selectItem itemLabel="Male" itemValue="M" />
+										<f:selectItem itemLabel="Female" itemValue="F" />
+
+										<p:ajax event="change" process="@this" partialSubmit="true" />
+
+									</p:selectOneMenu>
+
+									<h:outputText value="Phone: " />
+									<h:panelGroup>
+										<div class="ui-inputgroup">
+											<p:selectOneMenu value="#{quoteMB.quote.phonecode}"
+												placeholder="Area Code" autoWidth="false">
+												<f:selectItem itemLabel="Select One" />
+												<f:selectItems value="#{countryMB.countryList}"
+													var="country" itemValue="#{country.countrycode}"
+													itemLabel="#{country.countrycode} #{country.name}" />
+											</p:selectOneMenu>
+											<p:inputText value="#{quoteMB.quote.phone}" />
+										</div>
+									</h:panelGroup>
+
+									<h:outputText value="Date of Birth: *" />
+									<p:datePicker value="#{quoteMB.quote.dateofbirth}">
+										<p:ajax event="change" process="@this" partialSubmit="true" />
+									</p:datePicker>
+
+									<h:outputText value="Marital Status: *" />
+									<p:selectOneMenu value="#{quoteMB.quote.maritalstatus}"
+										autoWidth="false" placeholder="Area Code">
+										<f:selectItem itemLabel="Select One" />
+										<f:selectItem itemLabel="Married" itemValue="M" />
+										<f:selectItem itemLabel="Single" itemValue="S" />
+
+										<p:ajax event="change" process="@this" partialSubmit="true" />
+
+									</p:selectOneMenu>
+
+
+									<h:outputText value="Residency: " />
+									<p:selectOneMenu value="#{quoteMB.quote.residency}"
+										autoWidth="false" placeholder="Area Code">
+										<f:selectItem itemLabel="Select One" />
+										<f:selectItems value="#{countryMB.countryList}" var="country"
+											itemValue="#{country.id}" itemLabel="#{country.name}" />
+
+										<p:ajax event="change" process="@this" partialSubmit="true" />
+									</p:selectOneMenu>
+
+									<h:outputText value="Nationality: " />
+									<p:selectOneMenu value="#{quoteMB.quote.nationality}"
+										autoWidth="false" placeholder="Area Code">
+										<f:selectItem itemLabel="Select One" />
+										<f:selectItems value="#{countryMB.countryList}" var="country"
+											itemValue="#{country.id}" itemLabel="#{country.name}" />
+
+										<p:ajax event="change" process="@this" partialSubmit="true" />
+									</p:selectOneMenu>
+
+
+									<h:outputText value="Start Date" />
+									<p:datePicker value="#{quoteMB.quote.startdate}"
+										placeholder="dd/MM/yyyy">
+										<p:ajax event="dateSelect" process="@this"
+											partialSubmit="true" />
+										<p:ajax event="change" process="@this" partialSubmit="true" />
+									</p:datePicker>
+
+
+								</p:panelGrid>
+
+							</p:panel>
+
+							<p:panel id="memberPanel" style="border:none !important;">
+								<!-- <p:messages /> -->
+
+								<f:facet name="header">
+									<p:toolbar id="memberToolbar">
+										<f:facet name="left">
+											<h:outputText value="Members " style="font-size:14px;" />
+											<p:spacer width="20"></p:spacer>
+											<p:badge value="#{quoteMB.quote.members.size()}"
+												styleClass="mr-2"></p:badge>
+										</f:facet>
+										<f:facet name="right">
+											<p:commandButton value="Add Member" icon="fa fa-plus"
+												process="@this"
+												actionListener="#{quoteMB.addMember(null,null,null)}" />
+										</f:facet>
+
+									</p:toolbar>
+								</f:facet>
+
+								<p:dataGrid lazy="false" id="memberGrid" value="#{quoteMB.quote.members}"
+									var="member" columns="3" style="border:none !important;">
+
+									<p:panel header="#{member.id} #{member.firstname}"
+										style="border:none !important;">
+										<p:panelGrid columns="2"
+											columnClasses="ui-g-12 ui-md-3,ui-g-12 ui-md-9" layout="grid"
+											styleClass="ui-panelgrid-blank">
+
+											<h:outputText value="Firstname: *" />
+											<p:inputText value="#{member.firstname}" required="true"
+												label="Firstname" />
+
+											<h:outputText value="Lastname: *" />
+											<p:inputText value="#{member.lastname}" required="true"
+												label="Lastname" />
+
+
+											<h:outputText value="Date of Birth: *" />
+											<p:datePicker value="#{member.dateofbirth}">
+												<p:ajax event="change" process="@this" partialSubmit="true" />
+											</p:datePicker>
+
+											<h:outputText value="Relation: *" />
+											<p:selectOneMenu value="#{member.relation}" autoWidth="false"
+												placeholder="Relation">
+												<f:selectItem itemLabel="Select One" />
+												<f:selectItem itemLabel="Spouse" itemValue="S" />
+												<f:selectItem itemLabel="Child" itemValue="C" />
+
+												<p:ajax event="change" process="@this" partialSubmit="true" />
+											</p:selectOneMenu>
+
+
+											<h:outputText value="Nationality: " />
+											<p:selectOneMenu value="#{member.nationality}"
+												autoWidth="false" placeholder="Area Code">
+												<f:selectItem itemLabel="Select One" />
+												<f:selectItems value="#{countryMB.countryList}"
+													var="country" itemValue="#{country.id}"
+													itemLabel="#{country.name}" />
+
+												<p:ajax event="change" process="@this" partialSubmit="true" />
+											</p:selectOneMenu>
+
+										</p:panelGrid>
+									</p:panel>
+
+
+								</p:dataGrid>
+
+							</p:panel>
+
+
+							<p:panel header="Quote Details">
+								<!-- <p:messages /> -->
+								<p:panelGrid columns="4"
+									columnClasses="ui-g-12 ui-md-2,ui-g-12 ui-md-4,ui-g-12 ui-md-2,ui-g-12 ui-md-4"
+									layout="grid" styleClass="ui-panelgrid-blank">
+
+
+									<h:outputText value="Quote ID" />
+									<p:inputText value="#{quoteMB.quote.quoteid}" required="true"
+										label="Quote ID" />
+
+									<h:outputText value="Advisor Name" />
+									<p:inputText value="#{quoteMB.quote.advisorname}"
+										required="true" label="Advisor Name" />
+
+									<h:outputText value="Advisor Email" />
+									<p:inputText value="#{quoteMB.quote.advisoremail}"
+										required="true" label="Advisor Email" />
+
+									<h:outputText value="Currency" />
+									<p:selectOneMenu value="#{quoteMB.quote.currency}"
+										placeholder="Currency">
+										<f:selectItem itemLabel="Select One" />
+										<f:selectItem itemLabel="United Arab Dihram" itemValue="AED" />
+										<f:selectItem itemLabel="US Dollars" itemValue="USD" />
+
+									</p:selectOneMenu>
+
+									<h:outputText value="Quoted Date" />
+									<p:datePicker value="#{quoteMB.quote.quoteddate}"
+										placeholder="dd/MM/yyyy"></p:datePicker>
+
+									<h:outputText value="Quote Link" />
+									<h:panelGroup>
+										<div class="ui-inputgroup">
+											<p:inputText id="ipLink" value="#{quoteMB.quote.qrflink}"
+												required="true" label="Lastname" />
+											<p:commandButton onclick="copyToClipboard()"
+												icon="pi pi-copy"></p:commandButton>
+										</div>
+									</h:panelGroup>
+
+								</p:panelGrid>
+							</p:panel>
+
+						</p:tab>
+
+						<p:tab id="plan" title="Plan Selection">
+
+
+
+
+							<p:panel id="planPanel" style="border:none !important;">
+								<!-- <p:messages /> -->
+
+								<f:facet name="header">
+									<p:toolbar id="planToolbar">
+										<f:facet name="left">
+											<h:outputText value="Plans " style="font-size:14px;" />
+											<p:spacer width="20"></p:spacer>
+											<p:badge value="#{quoteMB.quote.linkedplans.size()}"
+												styleClass="mr-2"></p:badge>
+										</f:facet>
+										<f:facet name="right">
+											<p:commandButton value="Add Plan" icon="fa fa-plus"
+												process="@this" actionListener="#{quoteMB.addPlan}" />
+										</f:facet>
+
+									</p:toolbar>
+								</f:facet>
+
+								<p:dataGrid id="planGrid" value="#{quoteMB.quote.linkedplans}"
+									var="linkedplan" columns="1" style="border:none !important;">
+
+									<p:panel header="#{plan.id}" style="border:none !important;">
+										<p:panelGrid columns="4"
+											columnClasses="ui-g-12 ui-md-2,ui-g-12 ui-md-4,ui-g-12 ui-md-2,ui-g-12 ui-md-4"
+											layout="grid" styleClass="ui-panelgrid-blank">
+
+											<h:outputText value="Insurance Provider *" />
+											<p:selectOneMenu value="#{linkedplan.providerid}">
+
+												<f:selectItems
+													value="#{insuranceProviderMB.insuranceProviderList}"
+													var="ip" itemLabel="#{ip.name}" itemValue="#{ip.id}" />
+
+
+												<p:ajax event="change" process="@this" partialSubmit="true" />
+
+											</p:selectOneMenu>
+
+
+
+										</p:panelGrid>
+									</p:panel>
+
+
+								</p:dataGrid>
+
+
+
+							</p:panel>
+						</p:tab>
+
+						<p:tab id="contact" title="Review and Edit">
+							<p:panel header="Review and Edit">
+								<!-- <p:messages /> -->
+
+							</p:panel>
+						</p:tab>
+
+						<p:tab id="confirm" title="Confirmation">
+							<p:panel header="Confirmation">
+
+
+								<p:commandButton value="Submit" action="#{userWizard.save}"
+									update="growl" process="@this" />
+							</p:panel>
+						</p:tab>
+					</p:wizard>
+
+				</p:panel>
+			</div>
+
+		</p:panel>
+	</h:form>
+</h:body>
+
+
+</html>

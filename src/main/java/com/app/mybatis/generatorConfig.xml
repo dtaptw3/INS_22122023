@@ -1,0 +1,35 @@
+<!DOCTYPE generatorConfiguration PUBLIC
+ "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+ "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+	<classPathEntry location="D:\Programs\SQL JDBC\sqlite-jdbc-3.36.0.3.jar" />   
+	
+	<context id="simple" targetRuntime="MyBatis3" >  
+
+		<jdbcConnection driverClass="org.sqlite.JDBC"
+			connectionURL="jdbc:sqlite:insura.db" >
+			<property name="databaseName" value="insura" /> 
+		</jdbcConnection>	 
+
+		<javaModelGenerator
+			targetPackage="com.app.model.orm"
+			targetProject="Insura/src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator
+			targetPackage="com.app.model.orm.mapper.xml"
+			targetProject="Insura/src/main/java">
+		</sqlMapGenerator>
+
+		<javaClientGenerator
+			targetPackage="com.app.model.orm.mapper"
+			targetProject="Insura/src/main/java" type="XMLMAPPER">
+		</javaClientGenerator>
+
+		<table schema="text" tableName="Country"
+			domainObjectName="Country" />
+	</context>
+</generatorConfiguration>

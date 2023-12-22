@@ -1,0 +1,55 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+<h:body>
+	<h:form id="centralForm">
+		<div class="ui-fluid">
+			<p:panelGrid columns="4" columnClasses="ui-g-6 ui-md-12,ui-g-6 ui-md-12,ui-g-6 ui-md-6,ui-g-6 ui-md-12"
+				layout="grid" styleClass="ui-panelgrid-blank">
+
+				<p:commandButton value="Load Countries" process="@this"
+					icon="pi pi-spin pi-spinner"
+					actionListener="#{countryMB.loadCountries}" />
+
+				<p:selectOneMenu autoWidth="true">
+					<f:selectItem itemLabel="Select One" itemValue="" />
+					<f:selectItems value="#{countryMB.countryList}" var="country"
+						itemValue="#{country.id}" itemLabel="#{country.name}" />
+				</p:selectOneMenu>
+
+
+
+				<p:commandButton value="Save Country List" process="@this"
+					icon="pi pi-save" actionListener="#{countryMB.saveCountryList}" />
+
+
+
+				<p:commandButton value="List Countries" process="@this" update="@form"
+					partialSubmit="true" actionListener="#{countryMB.fetchCountries}" />
+
+
+
+			</p:panelGrid>
+
+			<p:dataTable lazy="false" value="#{countryMB.countryList}" filteredValue="#{countryMB.countryList}"
+				scrollable="true" scrollHeight="300" scrollRows="20" liveScroll="true" liveScrollBuffer="20"
+				var="country">
+
+				<p:column headerText="ID" width="100" >
+					#{country.id}</p:column>
+				<p:column headerText="Name" > #{country.name}</p:column>
+
+			</p:dataTable>
+
+		</div>
+
+
+
+	</h:form>
+</h:body>
+</html>

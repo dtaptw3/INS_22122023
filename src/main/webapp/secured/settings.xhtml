@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+<h:body style="background:black;">
+
+
+	<p:growl id="validStat" severity="info" life="4000" showDetail="true"
+		globalOnly="true" />
+
+	<p:panel header="Country" collapsed="true" toggleable="true">
+		<ui:include src="/secured/countriesView.xhtml"></ui:include>
+	</p:panel>
+
+	<p:panel header="Users" collapsed="true" toggleable="true">
+	
+
+		<p:dataTable lazy="false" value="#{usersMB.users}" scrollable="true"
+			scrollHeight="300" scrollRows="20" liveScroll="true"
+			liveScrollBuffer="20" var="user">
+
+			<p:column headerText="ID" width="100">
+					#{user.id}</p:column>
+			<p:column headerText="Name"> #{user.name}</p:column>
+
+		</p:dataTable>
+	</p:panel>
+
+
+</h:body>
+</html>

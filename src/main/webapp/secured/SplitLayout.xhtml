@@ -1,0 +1,45 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+<h:body>
+	<div class="card">
+		<p:splitter styleClass="mb-5">
+			<p:splitterPanel
+				styleClass="flex align-items-center justify-content-center"
+				size="70">
+				<ui:include src="#{layoutMB.masterTablePage}" />
+			</p:splitterPanel>
+
+			<p:splitterPanel
+				styleClass="flex align-items-center justify-content-center"
+				size="30">
+
+				<p:panel toggleable="true">
+
+					<f:facet name="actions">
+						<p:commandLink
+							styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default">
+							<h:outputText styleClass="ui-icon pi pi-question" />
+						</p:commandLink>
+						<p:commandLink
+							styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default">
+							<h:outputText styleClass="ui-icon pi pi-star" />
+						</p:commandLink>
+					</f:facet>
+
+					<ui:include src="#{layoutMB.detailsPage}" />
+
+				</p:panel>
+
+
+			</p:splitterPanel>
+		</p:splitter>
+	</div>
+
+</h:body>
+</html>

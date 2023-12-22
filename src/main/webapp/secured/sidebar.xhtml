@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+
+<h:body>
+	<h:form>
+
+		<div id="aptw3logolink"
+			style="text-decoration: none; background: black; padding: 19px 10px; outline: none; border-radius: 0px !important; width: 100%; border-radius: 3px; font-weight: 700; vertical-align: middle;">
+			<p:graphicImage url="/resources/images/icons/origami.png"
+				height="24px;">
+			</p:graphicImage>
+			<h:outputText value="#{usersMB.entity}"
+				style="font-size:13px;text-align:center;
+						text-weight:700;text-decoration:none;padding:2px;
+						border-radius:3px;font-weight:700;color:white;" />
+		</div>
+
+
+	<!-- 	<p:panelMenu>
+			<p:submenu label="Options" expanded="true">
+				<p:menuitem id="dashboard" value="Dashboard" icon="pi pi-desktop"
+					ajax="false" process="@this"
+					actionListener="#{modulesMB.navigateToPage}" />
+
+				<p:menuitem id="quotes" value="Quotes" icon="fa-solid fa-file-lines"
+					ajax="false" process="@this"
+					actionListener="#{modulesMB.navigateToPage}" />
+
+				<p:menuitem id="quickquotes" value="Quick Quotes" icon="fa-solid fa-file-lines"  ajax="false" process="@this"
+				 actionListener="#{modulesMB.navigateToPage}"   />
+				
+				<p:menuitem id="companies" value="Insurance Providers"
+					icon="fa fa-star" ajax="false" process="@this"
+					actionListener="#{modulesMB.navigateToPage}" />
+
+				<p:menuitem id="settings" value="Settings" icon="fa fa-gear"
+					ajax="false" process="@this"
+					actionListener="#{modulesMB.navigateToPage}" />
+
+				<p:menuitem value="Privacy" icon="pi pi-shield" />
+
+			</p:submenu>
+
+		</p:panelMenu> -->
+		
+		
+		
+		<p:panelMenu toggleable="true" model="#{modulesMB.model}" widgetVar="leftSideMenu"
+			stateful="true" style="border:none;"   />
+		
+	
+		
+		
+		
+	</h:form>
+
+</h:body>
+
+</html>

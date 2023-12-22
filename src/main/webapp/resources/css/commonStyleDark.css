@@ -1,0 +1,357 @@
+body .ui-dialog .ui-dialog-titlebar {
+	background: black;
+}
+
+body .ui-datagrid .ui-datagrid-content {
+	border: none !important;
+	background: #0f4b66;
+	color: #495057;
+	padding: 0px !important;
+}
+
+.ui-wizard-nav-back, .ui-wizard-nav-next {
+	width: 100px !important;
+}
+
+.ui-wizard-step-title {
+	/* background: #00ff40!important; */
+	/* color: white !important; */
+	padding: 10px 18px !important;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 14px;
+}
+
+/* .ui-wizard-step-title .ui-state-active {
+	background: black !important;
+} */
+.ui-wizard-step-title::after {
+	width: 0;
+	height: 0;
+	border-top: 60px solid transparent;
+	border-bottom: 60px solid transparent;
+	border-left: 60px solid green;
+}
+
+#container {
+	position: relative;
+	width: 450px;
+	top: 50%;
+	transform: translateY(-50%);
+	margin: 0 auto;
+}
+
+#overlay .ui-panelgrid, #overlay .p-grid, #overlay .ui-panelgrid-cell,
+	#overlay .ui-panelgrid, #overlay .ui-grid-responsive, #overlay .ui-panelgrid-cell
+ #overlay .ui-panel, #overlay .ui-panel-content {
+	border: 0 none;
+}
+
+body {
+	display: block;
+	margin: 0px;
+	border: none;
+	border-radius: 0px;
+}
+
+body .ui-button, ui-widget .ui-button, ui-button {
+	outline: none !important;
+	border-width: 2px;
+	font-weight: 600;
+}
+
+.ui-datatable-data {
+	color: red;
+	background: #f6f6f6;
+	border: 1px solid #ededed;
+}
+
+body .ui-datatable .ui-datatable-data>tr.ui-state-highlight {
+	border: 1px solid black;
+	background-color: #007ad9;
+	color: #7873C8;
+	font-weight: 600;
+	cursor: default;
+}
+
+.buttonStyle {
+	outline: none !important;
+	background: white;
+	border-width: 2px;
+	font-weight: 600;
+	color: #116fbf;
+}
+
+.ui-corner-all, body .ui-corner-all, .ui-panel, .ui-panel .ui-panel-titlebar,
+	body .ui-corner-top {
+	border-radius: 0px;
+	outline: aqua;
+}
+
+body .ui-panel .ui-panel-titlebar {
+	background: #113a51;
+	border-color: #113a51;
+	font-size: 14px;
+	border-radius: 0px;
+}
+
+body .ui-toolbar {
+	border: none;
+}
+
+.masterlayoutDiv {
+	padding: 0px;
+	margin: 0px;
+}
+
+.ui-widget .ui-dialog .ui-dialog-titlebar, .ui-dialog-titlebar {
+	padding: 0 !important;
+}
+
+.loginIpStyle .ui-panel-content {
+	border: none !important;
+	outline: none !important;
+	font-size: 14px;
+	border-radius: 0px;
+}
+
+.dashWidgetStyle {
+	/* font-size: 16px; */
+	color: #434159;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 16px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+/* 
+.pe-master-detail .pe-master-detail-level{margin:0;} */
+.navicon:hover, .navbutton:hover {
+	color: Tomato;
+}
+
+.navicon {
+	width: 20px;
+}
+
+.ui-datagrid {
+	padding: none;
+}
+
+.ajaxStatusDlg .ui-dialog-content {
+	background: transparent !important;
+	border: transparent !important;
+	padding: 0px !important;
+	box-shadow: none !important;
+}
+
+@media screen and (min-width: 600px) {
+	.ui-widget, .ui-widget .ui-widget {
+		font-size: 12px !important;
+		border-radius: 0px;
+	}
+	.ui-widget .ui-widget-content {
+		font-size: 12px !important;
+		border-radius: 0px;
+	}
+	.ui-selectonemenu .ui-selectonemenu-label {
+		font-size: 12px !important;
+	}
+	.ui-growl {
+		font-size: 12px !important;
+	}
+	.loginIpStyle {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 28%;
+		margin-top: 65px;
+		border-radius: 0px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #434159;
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 16px 0
+			rgba(0, 0, 0, 0.19);
+	}
+	.ui-widget .btnToolbarZ, .btnToolbarZ, .ui-widget .ui-widget-content .btnToolbarZ
+		{
+		position: sticky;
+		bottom: 0;
+	}
+	.ui-widget .headerToolbarZ, .headerToolbarZ, .ui-widget .ui-widget-content .headerToolbarZ
+		{
+		position: sticky;
+		top: 0;
+		background-color: black !important;
+	}
+}
+
+@media screen and (max-width: 601px) {
+	.ui-widget, .ui-widget .ui-widget {
+		font-size: 12px !important;
+		border-radius: 0px;
+	}
+	.ui-widget .ui-widget-content {
+		font-size: 12px !important;
+		padding: 0px !important;
+		border-radius: 0px;
+	}
+	.ui-selectonemenu .ui-selectonemenu-label {
+		font-size: 12px !important;
+	}
+	.subtextLabelZ {
+		font-size: 12px;
+	}
+	.subtextValueZ {
+		font-size: 14px;
+	}
+	.plateZ {
+		font-weight: 800;
+		font-size: 22px;
+	}
+	.cleanStatusZ .ui-selectonemenu-label {
+		font-size: 14px !important;
+	}
+	.redborder {
+		border: 1px solid red !important;
+	}
+	.ui-growl {
+		width: 100% !important;
+		left: 0px !important;
+		right: 0px !important;
+		margin: 0px 0px 0px 0px !important;
+		font-size: 16px !important;
+	}
+	.ui-growl-message {
+		width: 80% !important;
+	}
+	.intl-tel-input.separate-dial-code input[type=tel] {
+		padding-left: 100px !important;
+		padding-right: 100px !important;
+	}
+	.iti-mobile .intl-tel-input.iti-container {
+		font-family: Segoe UI;
+	}
+	.dateCardPanelGridZ {
+		padding: 30px 0;
+		text-align: center;
+	}
+	.cardPanelGridZ .ui-panelgrid .ui-grid-responsive .ui-panelgrid-cell {
+		border: 0 none;
+		padding: 0px !important;
+	}
+	.cardPanelGridZ .ui-panelgrid-cell {
+		padding: 0px !important;
+	}
+	.cardDataPanelZ {
+		padding: 10px 24px;
+	}
+	.subtextBtnZ {
+		background: transparent !important;
+		border: none !important;
+		outline: none !important;
+	}
+	.subtextBtnZ .ui-button-text {
+		background: transparent !important;
+		border: none !important;
+		font-style: italic;
+		font-size: 12px;
+	}
+	.ui-dialog {
+		width: 100% !important;
+		left: 0px !important;
+		right: 0px !important;
+		margin: 0px 0px 0px 0px !important;
+	}
+	.weekDayDisplay {
+		font-size: 12px !important;
+		background: none;
+		color: red;
+		border-radius: 0px ! important;
+	}
+	.ui-widget .btnToolbarZ, .btnToolbarZ, .ui-widget .ui-widget-content .btnToolbarZ
+		{
+		position: sticky;
+		bottom: 0;
+	}
+	.ui-widget .headerToolbarZ, .headerToolbarZ, .ui-widget .ui-widget-content .headerToolbarZ
+		{
+		position: sticky;
+		top: 0;
+		background-color: black !important;
+	}
+}
+
+.ui-widget, .ui-widget .ui-widget {
+	font-size: 12px !important;
+	border-radius: 0px;
+	/* background: #113a51; */
+}
+
+.ui-widget .ui-widget-content {
+	font-size: 12px !important;
+	border-radius: 0px;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	/* background: #113a51; */
+}
+
+
+body .ui-panelmenu .ui-panelmenu-panel:last-child .ui-panelmenu-header,
+body .ui-panelmenu .ui-panelmenu-content .ui-menuitem-link,
+body .ui-panel .ui-panel-title,
+.ui-panelmenu,
+body .ui-panelmenu,
+.ui-panelmenu-header .ui-state-active,
+/* .ui-state-active, */
+/* .ui-panelgrid, */
+.ui-widget,
+.ui-widget .ui-widget-content,
+body .ui-panelgrid,
+body .ui-corner-all,
+body .ui-panelgrid .ui-panelgrid-cell,
+body .ui-widget, 
+body .ui-widget .ui-widget-content,
+body  {
+	background: #113a51; 
+	border-color: #113a51;
+	/* border-color: #12c2e9; */
+	color: aqua;
+	border-radius: 0px;
+}
+
+.ui-panel, .ui-panel-content, 
+body .ui-panel,
+body .ui-panel .ui-panel-content, 
+.ui-widget-content,
+body .ui-datatable thead th,
+body .ui-datatable,
+.ui-datatable tbody tr,
+.ui-datatable tbody td {
+	background: #091f2b; 
+	color: aqua;
+}
+
+body .ui-panelgrid .ui-panelgrid-cell,
+.body .ui-corner-all {
+	border-color: #12c2e9;
+}
+
+
+/* .ui-corner-all, .body .ui-corner-all, .ui-panel, .ui-panel .ui-panel-titlebar,
+	body .ui-corner-top {
+	border-radius: 0px;
+	outline: aqua;
+} */
+body .ui-button, ui-widget .ui-button, ui-button {
+	background: black !important;
+	border-radius: 3px !important;
+	border: none;
+	font-weight: 600;
+	outline: none !important;
+}
+
+body .ui-button:hover, ui-widget .ui-button:hover, ui-button:hover {
+	background: #1fcf80 !important;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 16px 0
+		rgba(0, 0, 0, 0.19);
+}
+

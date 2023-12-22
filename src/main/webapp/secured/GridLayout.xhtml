@@ -1,0 +1,27 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+<h:body>
+	<div class="ui-fluid">
+		<p:panelGrid columns="#{layoutMB.gridLayout.columns}"
+			columnClasses="#{layoutMB.gridLayout.columnClasses}" layout="grid"
+			styleClass="ui-panelgrid-blank">
+
+			<!-- <ui:include src="/secured/InsuranceProviders.xhtml" />
+			<ui:include src="/secured/InsuranceProviderDetails.xhtml" />   -->
+			 <c:forEach var="page" items="#{layoutMB.gridLayout.pages}" >
+				<ui:include src="#{page}.xhtml" />
+			</c:forEach>  
+
+
+		</p:panelGrid>
+	</div>
+</h:body>
+
+</html>

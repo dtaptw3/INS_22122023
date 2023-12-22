@@ -1,0 +1,96 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+<p:panel id="ipDetails" header="Provider Details" toggleable="true"
+	widgetVar="ipDetPanel">
+
+	<h:form id="ipForm">
+		<p:panel id="ipDetails" toggleable="true" widgetVar="ipDetHeadPanel"
+			header="#{insProMB.insuranceProvider.name}">
+
+			<div class="ui-fluid">
+
+				<p:panelGrid columns="4"
+					columnClasses="ui-g-12 ui-md-2,ui-g-12 ui-md-4,ui-g-12 ui-md-2,ui-g-12 ui-md-4"
+					layout="grid" styleClass="ui-panelgrid-blank">
+
+					<h:outputText value="ID: *" />
+					<p:inputText value="#{insProMB.insuranceProvider.id}"
+						required="true" label="Firstname">
+						<p:ajax event="change" process="@this" partialSubmit="true"></p:ajax>
+					</p:inputText>
+
+					<h:outputText value="Name: *" />
+					<p:inputText value="#{insProMB.insuranceProvider.name}"
+						required="true" label="Firstname">
+						<p:ajax event="change" process="@this" partialSubmit="true"></p:ajax>
+					</p:inputText>
+
+					<h:outputText value="Start Date" />
+					<p:datePicker pattern="dd/MM/yyyy" placeholder="dd/MM/yyyy"
+						value="#{insProMB.insuranceProvider.currentratestartdate}">
+						<p:ajax event="change" process="@this" partialSubmit="true"></p:ajax>
+					</p:datePicker>
+
+					<h:outputText value="End Date" />
+					<p:datePicker pattern="dd/MM/yyyy" placeholder="dd/MM/yyyy"
+						value="#{insProMB.insuranceProvider.currentrateenddate}">
+						<p:ajax event="change" process="@this" partialSubmit="true"></p:ajax>
+					</p:datePicker>
+
+
+					<h:outputText value="Updated Start Date" />
+					<p:datePicker pattern="dd/MM/yyyy" placeholder="dd/MM/yyyy"
+						value="#{insProMB.insuranceProvider.updatedratestartdate}">
+						<p:ajax event="change" process="@this" partialSubmit="true"></p:ajax>
+					</p:datePicker>
+
+					<h:outputText value="Updated End Date" />
+					<p:datePicker pattern="dd/MM/yyyy" placeholder="dd/MM/yyyy"
+						value="#{insProMB.insuranceProvider.updatedrateenddate}">
+						<p:ajax event="change" process="@this" partialSubmit="true"></p:ajax>
+					</p:datePicker>
+
+
+					<h:outputText value="Rate" />
+					<p:inputNumber pattern="dd/MM/yyyy" placeholder="dd/MM/yyyy"
+						value="#{insProMB.insuranceProvider.rate}">
+						<p:ajax event="change" process="@this" partialSubmit="true"></p:ajax>
+					</p:inputNumber>
+
+
+
+					<h:outputText value="Status" />
+					<p:selectOneMenu value="#{insProMB.insuranceProvider.status}">
+						<f:selectItem itemLabel="Active" itemValue="A" />
+						<f:selectItem itemLabel="Inactive" itemValue="X" />
+					</p:selectOneMenu>
+
+				</p:panelGrid>
+			</div>
+
+		</p:panel>
+
+		
+
+		<p:dataTable lazy="true">
+
+			<f:facet name="header">
+
+				<p:commandButton value="Save" process="@this" icon="fa fa-save"
+					actionListener="#{insProMB.saveCompany}" />
+			</f:facet>
+
+			<p:column headerText="Plan name"></p:column>
+
+
+		</p:dataTable>
+	</h:form>
+</p:panel>
+
+
+</html>

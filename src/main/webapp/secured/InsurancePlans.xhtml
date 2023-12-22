@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+
+<p:panel toggleable="true" header="Insurance Plans"
+	widgetVar="ipViewPanel">
+
+	<h:form id="insurancePlanForm">
+
+		<p:menubar>
+			<f:facet name="options">
+				<div class="ui-input-icon-left mr-2"></div>
+				<p:commandButton value="Add Plan" icon="fa fa-plus"
+					styleClass="ui-button-info" process="@this"
+					actionListener="#{insPlanMB.initiateInsurancePlan}" />
+			</f:facet>
+
+		</p:menubar>
+
+
+		<p:dataTable lazy="false" value="#{insPlanMB.insurancePlanList}"
+			filteredValue="#{insPlanMB.insurancePlanList}" scrollable="true"
+			scrollRows="20" reflow="true" liveScroll="true" liveScrollBuffer="20"
+			var="insurancePlan" rowKey="#{insurancePlan.id}"
+			selectionMode="single">
+
+			<p:ajax event="rowSelect" listener="#{insPlanMB.selectInsurancePlan}" />
+
+
+			<p:column headerText="Name"> #{insurancePlan.providername}</p:column>
+
+			<p:column headerText="Plan Name"> #{insurancePlan.planname}</p:column>
+
+
+			<p:column headerText="Status">
+
+				<p:chip
+					label="#{insurancePlan.status.equals('Y') ? 'Active' : 'Deactivated'}"
+					icon="#{insurancePlan.status.equals('Y') ? 'pi pi-circle-on' : 'pi pi-circle'}"
+					styleClass="mr-2 custom-chip"
+					style="border-radius:12px; color:white; font-weight:700;
+				 background : #{insurancePlan.status.equals('Y') ? 'green' : 'red'}" />
+
+			</p:column>
+
+		</p:dataTable>
+
+
+	</h:form>
+
+</p:panel>
+
+
+
+</html>

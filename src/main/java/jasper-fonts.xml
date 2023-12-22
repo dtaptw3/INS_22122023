@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<fontFamilies>
+	<!-- the font-name used within the jasper report -->
+	<fontFamily name="Trado">
+		<!-- the actual font files within the jar -->
+		<normal>fonts/trado.ttf</normal> 
+		<!-- make jasper embed the font -->
+		<pdfEmbedded>true</pdfEmbedded>
+	</fontFamily>  
+</fontFamilies>  

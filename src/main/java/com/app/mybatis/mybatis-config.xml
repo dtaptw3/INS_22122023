@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration> 
+ 						 
+	<properties url="file:///C:/w3node.properties" />    
+                                                                
+	<settings>  
+		<setting name="useGeneratedKeys" value="true" />              
+		<setting name="logImpl" value="LOG4J" />        
+		<setting name="jdbcTypeForNull" value="NULL" />              
+	</settings>   
+
+	<environments default="W3" >           
+	
+		<environment id="W3">    
+			<transactionManager type="JDBC" />               
+			<dataSource type="POOLED">           
+				<property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />      
+				<property name="url" value="${instance1}" />                                                                                                     
+				<property name="username" value="aptw3" />                       
+				<property name="password" value="a9832whiteSpace17" />                        
+			</dataSource>    
+		</environment>  
+		
+	 	<environment id="IM"> 
+			<transactionManager type="JDBC" /> 
+			<dataSource type="POOLED">
+				<property name="driver"
+					value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+				<property name="url" value="${instance6}" />
+				<property name="username" value="aptw3" />   
+				<property name="password" value="a9832whiteSpace17" />
+			</dataSource>
+		</environment> 
+
+<!--
+		 <environment id="AWF">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver"
+					value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+				<property name="url" value="${instance7}" />
+				<property name="username" value="aptw3" />
+				<property name="password" value="a9832whiteSpace17" />
+			</dataSource>
+		</environment>
+
+		<environment id="V9">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver"
+					value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+				<property name="url" value="${instance8}" /> 
+				<property name="username" value="aptw3" /> 
+				<property name="password" value="a9832whiteSpace17" />  
+			</dataSource>
+		</environment> -->
+		
+		
+		<!-- <environment id="W3_Default"> 
+			<transactionManager type="JDBC" />    
+			<dataSource type="POOLED">
+				<property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />   
+				<property name="url" value="${instance9}" />                  
+				<property name="username" value="aptw3" />        
+				<property name="password" value="a9832whiteSpace17" />                      
+			</dataSource>   
+		</environment>   -->
+
+	</environments>
+
+
+	<mappers>
+ 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ModulesMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/UserCategoryMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/UsersMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/UserRightsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/UserRightsViewMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/UserCompanyDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/UserBranchDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/LocationMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/HoldingMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CompanyMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CompanyParametersMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/BranchMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CatRightsViewMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CountryMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CurrencyMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CustomerCategoryMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CustomerMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CustomerTypeMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/InvoiceHeadersMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/AllocationsMapper.xml" /> 
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/JobMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/JobDetailsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/JobBOMItemDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/JNSODetailsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/JobItemDetailsMapper.xml" /> 
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ProductMasterMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/EmployeeDetailsMapper.xml" />
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ContactTypeMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/StatusMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/DomainMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/DepartmentsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ContactGroupMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ContactCategoryMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PreMktDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/AreaMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/StateMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CSGroupMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SalesTypeMapper.xml" />
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/BankMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PaymentTermsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PaymentScheduleMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PaymentScheduleDetailsMapper.xml" />
+		
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/UnitMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CostCenterMapper.xml" />
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/QuotationMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/QuotationDetailsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/QuotationLineTaxDetailsMapper.xml" />    
+		<mapper resource="com/aptw3/model/orm/mapper/xml/QuotationTaxDetailsMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/QNENDetailsMapper.xml" />  
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CustomerTermsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ModuleGroupsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ModuleSettingsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/InventoryMasterMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/InventoryLedgerMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/InventorySettingsMapper.xml" />   
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ItemTaxMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ItemCatalogMapper.xml" /> 
+	
+		<mapper resource="com/aptw3/model/orm/mapper/xml/InventoryCategoryMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/InventoryGroupMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/InventorySubGroupMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/InventoryTypeMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ItemUnitMapper.xml" />
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PriceMasterMapper.xml" /> 
+
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ItemPricesMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/InventoryDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/BrandMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ColourMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SupplierMasterMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/QCMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SOMasterMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SODetailsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SOQuoDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SOTaxDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SOLineTaxDetailsMapper.xml" />   
+
+		<mapper resource="com/aptw3/model/orm/mapper/xml/DeliveryNoteMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/DeliveryNoteDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/DNSODetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/DeliveryNoteLineTaxDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/DeliveryNoteTaxDetailsMapper.xml" />  
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/WarehouseMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/EmployeeOriginMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/EmployeeTypeMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/EmployeeGradeMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/EmployeeCategoryMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ContractMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/VisaTypeMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SectionMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ReligionMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PointOfHireMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/JobTitleMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/GratuityMasterMapper.xml" />
+ 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SalesInvoiceMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SalesInvoiceDetailsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SalesTaxDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SalesLineTaxDetailsMapper.xml" />  
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SIExpenseDetailsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SISODNDetailsMapper.xml" />
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PaymentModeMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/GLSegmentMasterMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/GLCategoryMapper.xml" />
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PurchaseInvoiceMasterMapper.xml" />		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PurchaseInvoiceDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PurchaseLineTaxDetailsMapper.xml" /> 		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PIExpenseDetailsMapper.xml" />   
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PurchaseTaxDetailsMapper.xml" />    
+		
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PurchaseReturnMasterMapper.xml" />	 	
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PurchaseReturnDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PurchaseReturnLineTaxDetailsMapper.xml" /> 	 	
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PurchaseReturnExpensesMapper.xml" />   
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PurchaseReturnTaxDetailsMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PRPIDetailsMapper.xml" />  
+		 
+		
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/GRNMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/GRNDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/GRNPODetailsMapper.xml" /> 		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/GRNTaxDetailsMapper.xml" />    
+		<mapper resource="com/aptw3/model/orm/mapper/xml/GRNLineTaxDetailsMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PIPOGRNDetailsMapper.xml" />
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/GRNReturnMasterMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/GRNReturnDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/GTGRNDetailsMapper.xml" /> 
+		
+		
+		
+
+		<mapper resource="com/aptw3/model/orm/mapper/xml/LPOMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/LPODetailsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/LPOTaxDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/LPOLineTaxDetailsMapper.xml" /> 
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/POReqDetailsMapper.xml" />  
+		
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PurchaseReqMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PurchaseReqDetailsMapper.xml" /> 
+	
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SalesFIFODetailsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/InventoryStockMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/StockReservationFIFODetailsMapper.xml" />
+
+		<mapper resource="com/aptw3/model/orm/mapper/xml/FacilitiesMapper.xml" />   
+		<mapper resource="com/aptw3/model/orm/mapper/xml/VoucherNarrationMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/VouchersTaxDetailsMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/VouchersLineTaxDetailsMapper.xml" /> 
+
+		<mapper resource="com/aptw3/model/orm/mapper/xml/VouchersMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/VoucherTransTypeMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/VoucherTypeMapper.xml" />
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/RecurringJournalMasterMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/RecurringJournalDetailsMapper.xml" />
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SupplierCategoryMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CustEnqMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CustEnqDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CustEnqFollowupsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CampaignMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/FollowupContactMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/TaskMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PartMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ProcessMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ModuleTypeMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SkillMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ProductTypeMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/EmployeeAccomodationTypeMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SectionMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/EmployeeTrainingMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SubjectMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/DocumentMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ExamTemplateMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/LoanMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/FYearMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/WorkSheetMasterMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/WorkSheetDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/FieldSetMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CalculationSetMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ParSetMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/LeaveTypesMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/BasicSalariesMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/LoanRepaymentMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/FAdditionsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/FDeductionsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/OvertimeDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/LeaveGroupMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/LeaveGroupDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/LeaveTypeMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/LeaveDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/AnnualLeaveSettlementMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/AnnualLeaveSettlementDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/AnnualLeaveEncashmentMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PayrollMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PayrollMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PreviousHoldingsMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/FinalSettlementMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/AdditionsDeductionsMasterMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/AdditionsDeductionsDetailsMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/AdditionsDeductionsHeadMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/TimeSheetDetailsMapper.xml" /> 
+		 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CompanyCalendarMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CalendarDayDetailsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ShiftGroupDetailsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ShiftRegisterMapper.xml" /> 
+		
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/EmailConfigMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/EmailInboxMapper.xml" />   
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/InternalMessengerMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/IMConnectionsMapper.xml" />
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CateRightsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/UserWarehouseDetailsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/UserPeriodControlMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/UserDepartmentDetailsMapper.xml" />    
+		
+		
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/EmployeeUniformDetailsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/EmployeeAccomodationDetailsMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/EmployeeAccessoriesDetailsMapper.xml" />   
+	
+		<mapper resource="com/aptw3/model/orm/mapper/xml/GratuityDetailsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/QuickAccessMapper.xml" />  
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/FileDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/FolderDetailsMapper.xml" />    
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/BusinessTasksMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ContactDetailsMapper.xml" />    
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CompanyDetailsMapper.xml" />   
+		<mapper resource="com/aptw3/model/orm/mapper/xml/DealMasterMapper.xml" />
+		 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PreqSupplierMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CalendarEventsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ProductionSettingsMapper.xml" />  
+		 		 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/GLSegmentMasterMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/GLSegmentsMapper.xml" />    
+		<mapper resource="com/aptw3/model/orm/mapper/xml/GLSegmentSettingsMapper.xml" />   
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/TaxTypeMapper.xml" />    
+		<mapper resource="com/aptw3/model/orm/mapper/xml/TaxMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/DocTaxMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/DocTaxDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ExpenseTypeMapper.xml" />  
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SalesReturnMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SalesReturnDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SalesReturnExpensesMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SalesReturnLineTaxDetailsMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SalesReturnTaxDetailsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SRSIDetailsMapper.xml" />    
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/PortMasterMapper.xml" />  
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CSTypeMapper.xml" />  
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/LPOCategoryMapper.xml" />  
+		
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CreditNoteMasterMapper.xml" /> 	 	
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CreditNoteDetailsMapper.xml" /> 	 	
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/DebitNoteMasterMapper.xml" /> 	 	
+		<mapper resource="com/aptw3/model/orm/mapper/xml/DebitNoteDetailsMapper.xml" /> 	
+		
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CreditNoteLineTaxDetailsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CreditNoteTaxDetailsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/DebitNoteLineTaxDetailsMapper.xml" /> 
+		<mapper resource="com/aptw3/model/orm/mapper/xml/DebitNoteTaxDetailsMapper.xml" /> 
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/QuickNotesMapper.xml" />   
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ProspectMapper.xml" />   
+		<mapper resource="com/aptw3/model/orm/mapper/xml/ProspectGroupMapper.xml" />  
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/MaterialIssueMasterMapper.xml" />   
+		<mapper resource="com/aptw3/model/orm/mapper/xml/MaterialIssueDetailsMapper.xml" />   
+		<mapper resource="com/aptw3/model/orm/mapper/xml/MaterialIssueFIFODetailsMapper.xml" />    
+		<mapper resource="com/aptw3/model/orm/mapper/xml/MIMRDetailsMapper.xml" />
+		
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/InvoiceMasterMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/IRN_INFOMapper.xml" /> 
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SOPOMasterSummaryViewMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SOPODetailsSummaryViewMapper.xml" /> 
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/CustomerBalanceViewMapper.xml" />  
+		<mapper resource="com/aptw3/model/orm/mapper/xml/SupplierBalanceViewMapper.xml" />
+		<mapper resource="com/aptw3/model/orm/mapper/xml/EmployeeBalanceViewMapper.xml" />   
+		<mapper resource="com/aptw3/model/orm/mapper/xml/GeneralLedgerBalanceViewMapper.xml" />     
+		
+		
+		<mapper resource="com/aptw3/model/orm/mapper/xml/MachineTimeTableMapper.xml" />   
+		<mapper resource="com/aptw3/model/orm/mapper/xml/MachineMasterMapper.xml" />      
+		  
+		
+	
+		
+		
+				
+	</mappers>
+</configuration>

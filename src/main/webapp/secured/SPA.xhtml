@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<h:head>
+	<title>Insura</title>
+	<h:outputStylesheet name="css/login.css" />
+	<h:outputStylesheet library="webjars"
+	name="font-awesome/6.1.2/css/all.min-jsf.css" /> 
+	<link rel="shortcut icon" type="image/x-icon"
+		href="#{request.contextPath}/resources/images/icons/origami.png" />
+
+	<style>
+.bg-image {
+	background: #0F2027; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.cardStyle {
+	opacity: 4;
+	margin: 12% auto auto auto;
+	width: 25em;
+	padding: 2em auto auto 2em;
+}
+</style>
+</h:head>
+
+<h:body styleClass="bg-image">
+	<h:form id="spaForm">
+		<p:growl id="stat" life="3000" showDetail="true" showSummary="true">
+			<p:autoUpdate />
+		</p:growl>
+		
+		<p:card style="background:#0F2027!important;" >
+		
+		<h2>insura_[updates]_</h2>
+
+		<p>this page belongs to #{usersMB.entity}</p>
+		
+		
+		<p>last build date : #{usersMB.lastBuildDate}</p>
+
+		<p:commandButton value="execute defaults" actionListener="#{spa.executeDefaults}" />
+		<p:spacer width="6" />
+		<p:commandButton  value="/_" actionListener="#{spa.exitSPA}" />
+		
+		</p:card>
+	</h:form>
+</h:body>
+
+<p:ajaxStatus onstart="PF('statusDialog').show()"
+	oncomplete="PF('statusDialog').hide();" />
+
+<p:dialog id="progDlg" widgetVar="statusDialog" draggable="false"
+	closable="true" modal="true" styleClass="ajaxStatusDlg"
+	appendTo="@(body)" resizable="false" showHeader="false">
+	<p:graphicImage url="/resources/images/icons/origami.png" height="60" />
+</p:dialog>
+</html>

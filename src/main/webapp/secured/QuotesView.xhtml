@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+
+<h:body>
+
+	<h:form id="quotesViewForm">
+
+		<p:panel toggleable="true"  header="Quotes" widgetVar="quotesViewPanel">
+			<p:menubar>
+				<f:facet name="options">
+					<div class="ui-input-icon-left mr-2">
+					</div>
+					<p:commandButton value="New Quote" icon="fa fa-plus"
+						styleClass="ui-button-info" process="@this"
+						actionListener="#{quoteMB.initiateQuote}" />
+				</f:facet>
+			</p:menubar>
+
+			<p:dataTable lazy="false" id="quoteList" rows="10" paginator="true"
+				widgetVar="quotesTable" value="#{quoteMB.quotes}" var="quote"
+				filteredValue="#{quoteMB.quotesFilter}" selectionMode="single"
+				rowKey="#{quote.quoteid}" sortBy="#{quote.docdate}">
+
+			</p:dataTable>
+		</p:panel>
+
+	</h:form>
+
+	<ui:include src="/secured/QuoteDetails.xhtml" />
+</h:body>
+</html>

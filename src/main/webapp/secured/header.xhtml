@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+<h:body style="background:black;">
+	<h:form id="headerForm">
+
+		
+
+		<p:hotkey bind="alt+1"
+			handler="PF('sidebar1').toggle(); scrollToBottom();"
+			partialSubmit="true" process="@this" />
+
+		<p:hotkey bind="esc" handler="PF('sidebar1').hide();" />
+
+		<div class="ui-fluid">
+
+			<p:toolbar id="headertool" styleClass="headerToolbarZ">
+				<f:facet name="left">
+					<h:panelGroup>
+						<div class="ui-inputgroup">
+
+							<p:commandButton id="dropMenuButton" icon="pi pi-bars navicon"
+								process="@this" onclick="PF('sidebar1').toggle()"
+								style="width:40px;outline:none;border-radius: 0px !important;" />
+
+
+							<p:commandLink id="aptw3logolink" ajax="false" actionListener="#{modulesMB.navigateToPage}"
+								style="text-decoration:none;background:black;padding:3px 10px;outline:none;
+						border-radius: 0px !important;
+					border-radius:3px;font-weight:700;vertical-align:middle;">
+								<p:graphicImage url="/resources/images/icons/origami.png"
+									height="24px;">
+								</p:graphicImage>
+								<h:outputText value="#{usersMB.entity}"
+									style="font-size:13px;text-align:center;
+						text-weight:700;text-decoration:none;padding:2px;
+						border-radius:3px;font-weight:700;color:white;" />
+							</p:commandLink>
+
+						</div>
+					</h:panelGroup>
+				</f:facet>
+
+
+
+				<f:facet name="right">
+					<p:commandButton id="lg" value="Logout" icon="pi pi-sign-out"
+						ajax="false" action="#{usersMB.logout}"
+						styleClass="headerToolbarBtn" style="width:120px;" />
+
+				</f:facet>
+			</p:toolbar>
+
+
+
+
+		</div>
+
+
+
+
+
+	</h:form>
+</h:body>
+
+
+</html>

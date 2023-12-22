@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+
+
+<p:dialog header="Upload" widgetVar="dlgUpload" width="50%" height="40%"
+	resizable="false" style="padding:0;">
+	<h:form id="uploadForm" enctype="multipart/form-data">
+		<p:fileUpload listener="#{companyMB.handleFileUpload}"
+			cancelLabel="Cancel" uploadLabel="Upload" mode="advanced"
+			dragDropSupport="false" multiple="false"
+			oncomplete="PF('dlgUpload').hide();" update="@form" />
+	</h:form>
+</p:dialog>
+</html>

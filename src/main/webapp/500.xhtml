@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<h:head> 
+	<title>APTW3</title>
+	<h:outputStylesheet name="css/commonStyle.css" />
+	<h:outputScript name="js/commonValidation.js" />
+</h:head>
+
+<h:body>
+	<h:form>
+	 <p:focus context="okBtn"  />
+	 
+		<div class="ui-fluid"> 
+
+			<p:panel style="margin:18% 2%;text-align:center;" >
+				<p:panelGrid columns="1" styleClass="ui-panelgrid-blank ui-fluid"
+					layout="grid" columnClasses="ui-g-12 ui-md-12,ui-g-12 ui-md-12">
+
+					<p:button icon="fa fa-ban"
+						style="background:transparent;color:red;border:none;font-size:20px;"></p:button>
+
+					<h:outputText style="color:red;font-size:18px;"
+						value="Not Allowed. cEP.12.7.99"></h:outputText>
+					<h:outputText style="font-size:14px;"
+						value="You will be redirected to login page."></h:outputText>
+
+
+					<p:commandButton id="okBtn" value="Ok" style="width:80px;"  ajax="false"   
+						action="#{usersMB.logout}" ></p:commandButton>      
+				</p:panelGrid>
+			</p:panel>
+
+		</div>
+	</h:form>
+</h:body>
+</html>
